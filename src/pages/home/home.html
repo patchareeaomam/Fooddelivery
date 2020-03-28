@@ -1,17 +1,45 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>
+      Food Delivery
+    </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <ion-card *ngFor="let Food of foods">
+    <img [src]="food.image" alt="" (click)="goToPlaceDetail(food.id)">
+    <ion-card-content>
+      <ion-card-title>{{food.name}}</ion-card-title>
+      <p>{{food.detail}}</p>
+    </ion-card-content>
+  </ion-card>
+ <div class="showhead">
+   <img src="https://www.tcdcconnect.com/stocks/Z3V1VXNlcl8xMzk2NQ==/guuTempProject/20190123094818_blobid4.png" class="showimg">
+ <p>
+  Welcome to my restaurant
+ </p>
+  </div>
+  <ion-list>
+    <ion-item (click)="goToFastfood()">
+      <ion-avatar item-start>
+        <img src="https://s359.kapook.com/rq/580/435/50/pagebuilder/64132db2-79cd-4885-ace1-143e3dbee87d.jpg" alt="">
+      </ion-avatar>อาหารจานด่วน
+    </ion-item>
+    <ion-item (click)="goToSidedish()">
+      <ion-avatar item-start>
+        <img src="https://www.jordanflowerprint.com/wp-content/uploads/2018/11/42.jpg" alt="">
+      </ion-avatar>กับข้าว
+    </ion-item>
+    <ion-item (click)="goToDrink()">
+      <ion-avatar item-start>
+        <img src="https://www.login4.com/wp-content/uploads/2018/06/Screenshot_79.png" alt="">
+      </ion-avatar>เครื่องดื่ม
+    </ion-item>
+    <ion-item (click)="goToDessert()">
+      <ion-avatar item-start>
+        <img src="https://cache.gmo2.sistacafe.com/images/uploads/summary/image/22806/18.jpg" alt="">
+      </ion-avatar>ขนมหวาน
+    </ion-item>
+  </ion-list>
 </ion-content>
